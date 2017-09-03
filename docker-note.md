@@ -1,5 +1,6 @@
 # Docker 琐碎
 
+
 ## 容器内应用信号捕获
 
 docker stop 可以向容器发出 SIGTERM 信号, 如果10s(可以通过 stop 参数修改此时间)后容器没有停止，则发出 SIGKILL 命令，并立即关闭容器。
@@ -10,7 +11,10 @@ docker kill --signal="SIGTERM" 来发出各种信号，但是 kill 命令只是�
 
 ## entrypoint 与 cmd
 
-可以组合使用， cmd 可以被run的参数覆盖， 组合情况见 todo 
+可以组合使用， cmd 可以被run的参数覆盖， entrypoint 可以被 run 的 --entrypoint 覆盖。
+
+参考
+https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact
 
 ## attach 后安全离开容器
 
